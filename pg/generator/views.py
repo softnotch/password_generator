@@ -24,6 +24,9 @@ def password(request):
     if request.GET.get('numbers'):
         characters.extend(list('0123456789'))
 
+    if request.GET.get('special'):
+        characters.extend(list('!@#$%^&*()'))
+
     length = int(request.GET.get('length'))
 
     
