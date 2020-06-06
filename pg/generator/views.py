@@ -18,12 +18,13 @@ def password(request):
 
     characters = list('abcdefghijklmnopqrstuvwxyz')
 
-    length = 10
+    length = int(request.GET.get('length'))
 
+    
     thepassword = ''
 
     for x in range(length):
-        thepassword+= random.choice(characters)
+        thepassword += random.choice(characters)
 
     return render(request, 'generator/password.html', {'password':thepassword})
 
